@@ -2,6 +2,7 @@ import tkinter as tk
 from datetime import datetime, timedelta
 import random
 
+
 class Stopwatch:
     def __init__(self, root):
         self.root = root
@@ -17,11 +18,13 @@ class Stopwatch:
         self.canvas.pack(fill=tk.X, padx=20, pady=10)
 
         # Label for total elapsed time
-        self.total_time_label = tk.Label(root, text="Total Time: 00:00:00", font=("Helvetica", 20), bg="lightgray", fg="black")
+        self.total_time_label = tk.Label(root, text="Total Time: 00:00:00", font=("Helvetica", 20), bg="lightgray",
+                                         fg="black")
         self.total_time_label.pack(fill=tk.X, padx=20, pady=10)
 
         # Button to add a new timer
-        self.add_timer_button = tk.Button(root, text="Add Timer", command=self.add_timer, font=("Helvetica", 20), bg="orange", fg="black")
+        self.add_timer_button = tk.Button(root, text="Add Timer", command=self.add_timer, font=("Helvetica", 20),
+                                          bg="orange", fg="black")
         self.add_timer_button.pack(pady=20)
 
         # Update the bar graph and total time label regularly
@@ -57,19 +60,23 @@ class Stopwatch:
         }
 
         # Start button
-        start_button = tk.Button(frame, text="Start", command=lambda: self.start(timer_data), font=("Helvetica", 12), bg="blue", fg="green")
+        start_button = tk.Button(frame, text="Start", command=lambda: self.start(timer_data), font=("Helvetica", 12),
+                                 bg="blue", fg="green")
         start_button.grid(row=1, column=0, padx=5, pady=5)
 
         # Stop button
-        stop_button = tk.Button(frame, text="Stop", command=lambda: self.stop(timer_data), font=("Helvetica", 12), bg="red", fg="red")
+        stop_button = tk.Button(frame, text="Stop", command=lambda: self.stop(timer_data), font=("Helvetica", 12),
+                                bg="red", fg="red")
         stop_button.grid(row=1, column=1, padx=5, pady=5)
 
         # Reset button
-        reset_button = tk.Button(frame, text="Reset", command=lambda: self.reset(timer_data), font=("Helvetica", 12), bg="blue", fg="blue")
+        reset_button = tk.Button(frame, text="Reset", command=lambda: self.reset(timer_data), font=("Helvetica", 12),
+                                 bg="blue", fg="blue")
         reset_button.grid(row=1, column=2, padx=5, pady=5)
 
         # Delete button
-        delete_button = tk.Button(frame, text="Delete", command=lambda: self.delete_timer(timer_data), font=("Helvetica", 12), bg="gray", fg="orange")
+        delete_button = tk.Button(frame, text="Delete", command=lambda: self.delete_timer(timer_data),
+                                  font=("Helvetica", 12), bg="gray", fg="orange")
         delete_button.grid(row=1, column=3, padx=5, pady=5)
 
         self.timers.append(timer_data)
@@ -136,6 +143,7 @@ class Stopwatch:
         total_time = sum((timer["elapsed_time"] for timer in self.timers), timedelta())
         time_str = str(total_time).split(".")[0]  # Remove microseconds
         self.total_time_label.config(text=f"Total Time: {time_str}")
+
 
 # Create the main window and run the application
 root = tk.Tk()
