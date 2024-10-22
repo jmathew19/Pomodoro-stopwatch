@@ -34,7 +34,7 @@ I created this to help me see how I am spending my time and visualize the poropo
 1. Navigate to the directory containing the script.
 2. Run the script with Python:
    ```bash
-   python stopwatch.py
+   python time.py
    ```
 3. The application window will open, where you can start adding and managing timers.
 
